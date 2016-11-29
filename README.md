@@ -1,24 +1,23 @@
-# ElixirPrimeTable
+# Elixir Prime Table
 
-**TODO: Add description**
+An application written in Elixir that takes numeric input (N) from a user and outputs a multiplication table of (N) prime numbers. E.g. when N is 3:
 
-## Installation
+    |      |    2 |    3 |    5 |
+    |    2 |    4 |    6 |   10 |
+    |    3 |    6 |    9 |   15 |
+    |    5 |   10 |   15 |   25 |
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+## How to run it
 
-  1. Add `elixir_prime_table` to your list of dependencies in `mix.exs`:
+## What I'm pleased with
 
-    ```elixir
-    def deps do
-      [{:elixir_prime_table, "~> 0.1.0"}]
-    end
-    ```
+## What would I do if I had more time
 
-  2. Ensure `elixir_prime_table` is started before your application:
+## ToDo
 
-    ```elixir
-    def application do
-      [applications: [:elixir_prime_table]]
-    end
-    ```
-
+- [] write an algorithm to solve the prime number generation
+- [] write a function to print a N+1 x N+1 table — or find a library
+- [] test with very large primes
+- [] check for N to be numeric and > 0
+- [] add mix-test.watch, dogma, credo, dialyzer, ExDoc, ExCoveralls
+- [] provide precompiled binaries for linux and OS X

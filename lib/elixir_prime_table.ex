@@ -1,0 +1,2 @@
+defmodule ElixirPrimeTable do
+end

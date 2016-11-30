@@ -27,6 +27,12 @@ defmodule ElixirPrimeTable.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:mix_test_watch, "~> 0.2", only: :dev},
+     {:dogma, "~> 0.1", only: :dev},
+     {:credo, "~> 0.5", only: [:dev, :test]},
+     {:dialyxir, "~> 0.4", only: [:dev]},
+     {:ex_doc, "~> 0.14", only: :dev},
+     {:excoveralls, "~> 0.5", only: :test},
+    ]
   end
 end

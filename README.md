@@ -19,5 +19,5 @@ An application written in Elixir that takes numeric input (N) from a user and ou
 - [] write a function to print a N+1 x N+1 table — or find a library
 - [] test with very large primes
 - [] check for N to be numeric and > 0
-- [] add mix-test.watch, dogma, credo, dialyzer, ExDoc, ExCoveralls
+- [x] add mix-test.watch, dogma, credo, dialyzer, ExDoc, ExCoveralls
 - [] provide precompiled binaries for linux and OS X

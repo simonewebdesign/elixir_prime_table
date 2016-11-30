@@ -1,12 +1,12 @@
 defmodule Primes do
 
-  @moduledoc """
+  @doc """
   Returns true if the number is prime, false otherwise.
 
   ## Examples
 
   iex> Primes.prime? 1
-  true
+  false
 
   iex> Primes.prime? 2
   true
@@ -20,7 +20,7 @@ defmodule Primes do
   iex> Primes.prime? -3
   false
   """
-  def prime?(1), do: true
+  @spec prime?(number) :: boolean
   def prime?(number) when number > 1 do
     1..number
     |> Stream.filter(&rem(number, &1) == 0)

@@ -7,14 +7,13 @@ defmodule ElixirPrimeTable.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     escript: escript(),
+     deps: deps(),
+    ]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
-  def application do
-    [applications: [:logger]]
+  defp escript do
+    [main_module: CLI, path: "bin/prime-table"]
   end
 
   # Dependencies can be Hex packages:

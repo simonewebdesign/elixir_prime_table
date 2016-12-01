@@ -8,20 +8,20 @@ defmodule Primes do
 
   ## Examples
 
-  iex> Primes.prime? 1
-  false
+      iex> Primes.prime? 1
+      false
 
-  iex> Primes.prime? 2
-  true
+      iex> Primes.prime? 2
+      true
 
-  iex> Primes.prime? 7
-  true
+      iex> Primes.prime? 7
+      true
 
-  iex> Primes.prime? 42
-  false
+      iex> Primes.prime? 42
+      false
 
-  iex> Primes.prime? -3
-  false
+      iex> Primes.prime? -3
+      false
   """
   @spec prime?(number()) :: boolean
   def prime?(n) when n > 1 do
@@ -36,8 +36,8 @@ defmodule Primes do
 
   ## Examples
 
-  iex> Primes.first(3) |> Enum.to_list
-  [2, 3, 5]
+      iex> Primes.first(3) |> Enum.to_list
+      [2, 3, 5]
   """
   @spec first(pos_integer()) :: list
   def first(0), do: []
@@ -55,11 +55,11 @@ defmodule Primes do
 
   ## Examples
 
-  iex> Primes.multiplication_table(3)
-  [ [ 0,  2,  3,  5 ],
-    [ 2,  4,  6, 10 ],
-    [ 3,  6,  9, 15 ],
-    [ 5, 10, 15, 25 ] ]
+      iex> Primes.multiplication_table(3)
+      [ [ 0,  2,  3,  5 ],
+        [ 2,  4,  6, 10 ],
+        [ 3,  6,  9, 15 ],
+        [ 5, 10, 15, 25 ] ]
   """
   @spec multiplication_table(pos_integer()) :: list(list)
   def multiplication_table(0), do: []

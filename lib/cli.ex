@@ -6,10 +6,10 @@ defmodule CLI do
 
   ## Examples
 
-  $ bin/prime-table 2
-  |   | 2 | 3 |
-  | 2 | 4 | 6 |
-  | 3 | 6 | 9 |
+      $ bin/prime-table 2
+      |   | 2 | 3 |
+      | 2 | 4 | 6 |
+      | 3 | 6 | 9 |
   """
   @spec main(list(binary)) :: :ok
   def main([]),    do: IO.puts "usage: bin/prime-table <NUMBER>"

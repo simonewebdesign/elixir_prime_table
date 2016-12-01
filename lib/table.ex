@@ -8,10 +8,10 @@ defmodule Table do
 
   ## Examples
 
-  iex> Table.generate(2)
-  "|   | 2 | 3 |
-  | 2 | 4 | 6 |
-  | 3 | 6 | 9 |"
+      iex> Table.generate(2)
+      "|   | 2 | 3 |
+      | 2 | 4 | 6 |
+      | 3 | 6 | 9 |"
   """
   @spec generate(pos_integer(), String.t) :: String.t
   def generate(size, separator \\ "|") do

@@ -15,8 +15,8 @@ An application written in Elixir that takes numeric input (N) from a user and ou
 
 ## ToDo
 
-- [] write an algorithm to solve the prime number generation
-- [] write a function to print a N+1 x N+1 table — or find a library
+- [x] write an algorithm to solve the prime number generation
+- [x] write a function to print a N+1 x N+1 table
 - [] test with very large primes
 - [] check for N to be numeric and > 0
 - [x] add mix-test.watch, dogma, credo, dialyzer, ExDoc, ExCoveralls

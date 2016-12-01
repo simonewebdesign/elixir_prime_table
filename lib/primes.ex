@@ -36,7 +36,7 @@ defmodule Primes do
 
   ## Examples
 
-  iex> Primes.first(3)
+  iex> Primes.first(3) |> Enum.to_list
   [2, 3, 5]
   """
   @spec first(pos_integer()) :: list
@@ -46,8 +46,30 @@ defmodule Primes do
     |> Stream.iterate(increment())
     |> Stream.filter(&prime?(&1))
     |> Stream.take(n)
-    |> Enum.to_list
   end
 
   defp increment, do: &(&1 + 1)
+
+  @doc """
+  Returns a 2D list of primes.
+
+  ## Examples
+
+  iex> Primes.multiplication_table(3)
+  [ [ 0,  2,  3,  5 ],
+    [ 2,  4,  6, 10 ],
+    [ 3,  6,  9, 15 ],
+    [ 5, 10, 15, 25 ] ]
+  """
+  @spec multiplication_table(pos_integer()) :: list(list)
+  def multiplication_table(0), do: []
+  def multiplication_table(n) when n > 0 do
+    primes = first(n)
+
+    matrix = Stream.map(primes, fn i ->
+      [ i | Enum.map(primes, fn j -> i * j end) ]
+    end)
+
+    [ [ 0 | Enum.to_list(primes) ] | Enum.to_list(matrix) ]
+  end
 end

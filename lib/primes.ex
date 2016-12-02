@@ -14,20 +14,39 @@ defmodule Primes do
       iex> Primes.prime? 2
       true
 
+      iex> Primes.prime? 3
+      true
+
+      iex> Primes.prime? 5
+      true
+
+      iex> Primes.prime? 6
+      false
+
       iex> Primes.prime? 7
+      true
+
+      iex> Primes.prime? 11
+      true
+
+      iex> Primes.prime? 23
       true
 
       iex> Primes.prime? 42
       false
 
+      iex> Primes.prime? 104729
+      true
+
       iex> Primes.prime? -3
       false
   """
   @spec prime?(number()) :: boolean
-  def prime?(n) when n > 1 do
-    1..n
-    |> Stream.filter(&rem(n, &1) == 0)
-    |> Enum.count == 2
+  def prime?(2), do: true
+  def prime?(n) when n > 2 do
+    (n |> :math.sqrt |> round)..2
+    |> Enum.any?(&rem(n, &1) == 0) # will stop the iteration on the first truthy value
+    |> Kernel.!
   end
   def prime?(_), do: false
 

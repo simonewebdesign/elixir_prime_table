@@ -42,13 +42,13 @@ defmodule Primes do
       false
   """
   @spec prime?(number()) :: boolean
+  def prime?(n) when n <= 1, do: false
   def prime?(2), do: true
-  def prime?(n) when n > 2 do
+  def prime?(n) do
     (n |> :math.sqrt |> round)..2
     |> Enum.any?(&rem(n, &1) == 0) # will stop the iteration on the first truthy value
     |> Kernel.!
   end
-  def prime?(_), do: false
 
   @doc """
   Returns the first N prime numbers.

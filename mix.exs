@@ -9,6 +9,7 @@ defmodule ElixirPrimeTable.Mixfile do
      start_permanent: Mix.env == :prod,
      escript: escript(),
      deps: deps(),
+     test_coverage: [tool: ExCoveralls]
     ]
   end
 

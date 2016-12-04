@@ -70,6 +70,26 @@ defmodule Primes do
   defp increment, do: &(&1 + 1)
 
   @doc """
+  Returns the nth prime number.
+
+  ## Examples
+
+      iex> Primes.prime(3)
+      5
+
+      iex> Primes.prime(10000)
+      104_729
+
+      iex> Primes.prime(-5)
+      ** (ArgumentError) not a positive integer
+  """
+  @spec prime(pos_integer()) :: pos_integer()
+  def prime(n) when n <= 0, do: raise ArgumentError, message: "not a positive integer"
+  def prime(n) do
+    first(n) |> Enum.at(-1)
+  end
+
+  @doc """
   Returns a 2D list of primes.
 
   ## Examples

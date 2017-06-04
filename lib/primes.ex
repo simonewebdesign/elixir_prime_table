@@ -62,12 +62,10 @@ defmodule Primes do
   def first(0), do: []
   def first(n) when n > 0 do
     2
-    |> Stream.iterate(increment())
-    |> Stream.filter(&prime?(&1))
+    |> Stream.iterate(&(&1 + 1))
+    |> Stream.filter(&prime?/1)
     |> Stream.take(n)
   end
-
-  defp increment, do: &(&1 + 1)
 
   @doc """
   Returns the nth prime number.
@@ -86,7 +84,7 @@ defmodule Primes do
   @spec prime(pos_integer()) :: pos_integer()
   def prime(n) when n <= 0, do: raise ArgumentError, message: "not a positive integer"
   def prime(n) do
-    first(n) |> Enum.at(-1)
+    Enum.at(first(n), -1)
   end
 
   @doc """
